@@ -1,0 +1,450 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth Scroll (Lenis) */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+:root {
+  /* Color System */
+  --autumn: #fae4cf;
+  --firmament: #0a0f23;
+  --firmament-light: #161c36;
+  --luxury-black: #050810;
+  --gold: #D4AF37;
+  --gold-light: #E5C158;
+  --gold-dark: #C9A961;
+
+  /* Moroccan Earth Tones */
+  --moroccan-terracotta: #E07A5F;
+  --moroccan-sand: #F4E8C1;
+  --moroccan-burgundy: #81283C;
+  --moroccan-olive: #8B7355;
+  --moroccan-cream: #F8F4E8;
+  --french-gray: #D0CFD3;
+  --davys-gray: #555555;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-inter), 'Arial', sans-serif;
+}
+
+/* RTL Flexbox adjustments */
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .space-x-2>*+*,
+[dir="rtl"] .space-x-3>*+*,
+[dir="rtl"] .space-x-4>*+*,
+[dir="rtl"] .space-x-6>*+*,
+[dir="rtl"] .space-x-8>*+* {
+  margin-left: 0;
+  margin-right: var(--tw-space-x-reverse);
+}
+
+/* RTL Text alignment */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* RTL Padding/Margin adjustments */
+[dir="rtl"] .pl-6 {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .pr-6 {
+  padding-right: 0;
+  padding-left: 1.5rem;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* RTL Border adjustments */
+[dir="rtl"] .border-l {
+  border-left: 0;
+  border-right: 1px solid;
+}
+
+[dir="rtl"] .border-r {
+  border-right: 0;
+  border-left: 1px solid;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--firmament);
+  /* Firmament Dark Blue */
+  color: var(--french-gray);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.8s ease;
+}
+
+/* Background Gradients */
+.bg-animated-gradient {
+  background: linear-gradient(-45deg, #0a0f23, #fae4cf, #0a0f23, #fae4cf);
+  background-size: 400% 400%;
+  animation: gradient-flow 15s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--gold);
+  color: var(--firmament);
+}
+
+::-moz-selection {
+  background-color: var(--gold);
+  color: var(--firmament);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+p {
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+/* Luxury Button */
+.btn-luxury {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--firmament);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(10, 15, 35, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes doorOpenLeft {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1200px) rotateY(-120deg);
+  }
+}
+
+@keyframes doorOpenRight {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1200px) rotateY(120deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Utility Classes */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-cormorant);
+  font-style: italic;
+}
+
+.container-luxury {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container-luxury {
+    padding: 0 1rem;
+  }
+}
+
+/* Loading State */
+.skeleton {
+  background: linear-gradient(90deg,
+      var(--firmament) 25%,
+      var(--firmament-light) 50%,
+      var(--firmament) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Liquid Glass Effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.liquid-glass::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50% !important;
+  left: -50% !important;
+  width: 200% !important;
+  height: 200% !important;
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 70%) !important;
+  transform: translate(-100%, -100%) !important;
+  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  pointer-events: none !important;
+}
+
+.liquid-glass:hover::before,
+.liquid-glass:active::before {
+  transform: translate(25%, 25%) !important;
+}
+
+.liquid-glass:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.liquid-glass-active {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.05) !important;
+}
