@@ -104,9 +104,9 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                                                 fill="none"
                                                 stroke="currentColor"
                                                 strokeWidth="0.2"
-                                                className="text-black"
+                                                className="text-black-smoke"
                                             />
-                                            <circle cx="20" cy="20" r="0.8" fill="currentColor" className="text-black" />
+                                            <circle cx="20" cy="20" r="0.8" fill="currentColor" className="text-black-smoke" />
                                         </pattern>
                                         <rect width="100" height="100" fill={`url(#pattern-${category.id})`} />
                                     </svg>

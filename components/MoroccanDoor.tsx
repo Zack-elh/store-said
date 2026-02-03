@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Image from 'next/image';
 
 interface MoroccanDoorProps {
     isOpen: boolean;
@@ -61,9 +60,9 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="0.5"
-                                    className="text-gold"
+                                    className="text-black-smoke"
                                 />
-                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-gold" />
+                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-black-smoke" />
                             </pattern>
                             <rect width="100" height="100" fill="url(#moroccan-pattern-left)" />
                         </svg>
@@ -103,9 +102,9 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="0.5"
-                                    className="text-gold"
+                                    className="text-black-smoke"
                                 />
-                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-gold" />
+                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-black-smoke" />
                             </pattern>
                             <rect width="100" height="100" fill="url(#moroccan-pattern-right)" />
                         </svg>

@@ -21,6 +21,8 @@ const config: Config = {
 
                 // Dark luxury backgrounds (keeping for transition or secondary use)
                 'luxury-black': '#0A0A0A',
+                'black-smoke': '#1A1A1A',
+                'royal-blue': '#4169E1',
                 'luxury-dark': '#1A1A1A',
                 'luxury-charcoal': '#2A2A2A',
 

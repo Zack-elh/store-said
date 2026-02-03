@@ -33,8 +33,7 @@ export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
             <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
                 <div className="text-center max-w-4xl">
                     <h1
-                        ref={titleRef}
-                        className="text-display font-serif text-gradient-gold mb-6 opacity-0 translate-y-20 scale-95"
+                        className="text-display font-serif text-royal-blue mb-6 opacity-0 translate-y-20 scale-95"
                     >
                         {t('hero.title')}
                     </h1>
