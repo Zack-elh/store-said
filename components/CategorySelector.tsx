@@ -71,7 +71,7 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                         <h2 className="text-display font-serif text-gradient-gold mb-4">
                             {t('category.title')}
                         </h2>
-                        <p className="text-lg text-french-gray/70 max-w-3xl mx-auto">
+                        <p className="text-lg text-foreground max-w-3xl mx-auto">
                             {t('category.subtitle')}
                         </p>
                     </div>
@@ -104,9 +104,9 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                                                 fill="none"
                                                 stroke="currentColor"
                                                 strokeWidth="0.2"
-                                                className="text-black-smoke"
+                                                className="text-black/20"
                                             />
-                                            <circle cx="20" cy="20" r="0.8" fill="currentColor" className="text-black-smoke" />
+                                            <circle cx="20" cy="20" r="0.8" fill="currentColor" className="text-black/20" />
                                         </pattern>
                                         <rect width="100" height="100" fill={`url(#pattern-${category.id})`} />
                                     </svg>
@@ -116,10 +116,10 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                                 <div className="relative h-full flex flex-col justify-center items-center text-center p-12 z-10">
                                     <div className="w-full max-w-md">
                                         <div className="h-px w-12 bg-gold/30 mx-auto mb-6 transition-all duration-500 group-hover:w-24 group-hover:bg-gold" />
-                                        <h3 className="text-4xl md:text-5xl font-serif text-french-gray mb-4 tracking-tight group-hover:text-gold transition-colors duration-500">
+                                        <h3 className="text-4xl md:text-5xl font-serif text-gold mb-4 tracking-tight group-hover:text-gold-light transition-colors duration-500">
                                             {category.name}
                                         </h3>
-                                        <p className="text-french-gray/60 text-sm md:text-base mb-8 uppercase tracking-[0.2em] font-light leading-relaxed max-w-sm mx-auto opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
+                                        <p className="text-foreground text-sm md:text-base mb-8 uppercase tracking-[0.2em] font-light leading-relaxed max-w-sm mx-auto opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
                                             {category.description}
                                         </p>
                                         <div className="inline-flex items-center text-gold text-xs uppercase tracking-[0.3em] font-medium border-b border-transparent hover:border-gold pb-1 transition-all">

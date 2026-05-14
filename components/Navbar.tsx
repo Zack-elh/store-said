@@ -27,7 +27,7 @@ export default function Navbar() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'nav-imperial py-4' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container-luxury flex items-center justify-between">
@@ -42,25 +42,25 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center space-x-8">
                     <Link
                         href="/products"
-                        className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                        className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                     >
                         {t('nav.collections')}
                     </Link>
                     <Link
                         href="/about"
-                        className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                        className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                     >
                         {t('nav.story')}
                     </Link>
                     <Link
                         href="/craftsmanship"
-                        className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                        className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                     >
                         {t('nav.craftsmanship')}
                     </Link>
                     <Link
                         href="/contact"
-                        className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                        className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                     >
                         {t('nav.contact')}
                     </Link>
@@ -72,8 +72,8 @@ export default function Navbar() {
                                 key={lang}
                                 onClick={() => setLanguage(lang.toLowerCase() as 'en' | 'fr' | 'ar')}
                                 className={`text-xs uppercase tracking-wider px-2 py-1 transition-colors ${language.toUpperCase() === lang
-                                    ? 'text-gold font-semibold'
-                                    : 'text-french-gray/60 hover:text-gold'
+                                    ? 'text-foreground font-semibold'
+                                    : 'text-foreground hover:text-foreground'
                                     }`}
                             >
                                 {lang}
@@ -88,8 +88,8 @@ export default function Navbar() {
                                 key={curr}
                                 onClick={() => setCurrency(curr)}
                                 className={`text-xs uppercase tracking-wider px-2 py-1 transition-colors ${currency === curr
-                                    ? 'text-gold font-semibold'
-                                    : 'text-french-gray/60 hover:text-gold'
+                                    ? 'text-foreground font-semibold'
+                                    : 'text-foreground hover:text-foreground'
                                     }`}
                             >
                                 {curr}
@@ -99,7 +99,7 @@ export default function Navbar() {
 
                     {/* Cart Icon */}
                     <Link href="/cart" className="relative group p-2">
-                        <svg className="w-6 h-6 text-french-gray group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
                         {cartCount > 0 && (
@@ -113,7 +113,7 @@ export default function Navbar() {
                 {/* Mobile Cart & Menu Buttons */}
                 <div className="flex items-center space-x-4 md:hidden">
                     <Link href="/cart" className="relative p-2">
-                        <svg className="w-6 h-6 text-french-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
                         {cartCount > 0 && (
@@ -128,13 +128,13 @@ export default function Navbar() {
                         aria-label="Toggle menu"
                     >
                         <span
-                            className={`block h-0.5 w-full bg-french-gray transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
+                            className={`block h-0.5 w-full bg-foreground transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
                         />
                         <span
-                            className={`block h-0.5 w-full bg-french-gray transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}
+                            className={`block h-0.5 w-full bg-foreground transition-opacity ${isMobileMenuOpen ? 'opacity-0' : ''}`}
                         />
                         <span
-                            className={`block h-0.5 w-full bg-french-gray transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+                            className={`block h-0.5 w-full bg-foreground transition-transform ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
                         />
                     </button>
                 </div>
@@ -152,28 +152,28 @@ export default function Navbar() {
                         <div className="container-luxury py-6 flex flex-col space-y-4">
                             <Link
                                 href="/products"
-                                className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                                className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {t('nav.collections')}
                             </Link>
                             <Link
                                 href="/about"
-                                className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                                className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {t('nav.story')}
                             </Link>
                             <Link
                                 href="/craftsmanship"
-                                className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                                className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {t('nav.craftsmanship')}
                             </Link>
                             <Link
                                 href="/contact"
-                                className="text-sm uppercase tracking-wider hover:text-gold transition-colors"
+                                className="text-sm uppercase tracking-wider hover:text-foreground transition-colors"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {t('nav.contact')}
@@ -189,8 +189,8 @@ export default function Navbar() {
                                             setIsMobileMenuOpen(false);
                                         }}
                                         className={`text-xs uppercase tracking-wider px-3 py-1.5 transition-colors ${language.toUpperCase() === lang
-                                            ? 'text-gold font-semibold'
-                                            : 'text-french-gray/60'
+                                            ? 'text-foreground font-semibold'
+                                            : 'text-foreground'
                                             }`}
                                     >
                                         {lang}

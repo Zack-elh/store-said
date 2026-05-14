@@ -10,11 +10,19 @@ const config: Config = {
         extend: {
             colors: {
                 // New primary colors
-                'autumn': '#fae4cf',
-                'firmament': '#0a0f23',
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
 
-                // Gradient colors
-                'gradient': {
+                // Imperial Theme
+                obsidian: '#0A0A0B',
+                // gold: '#C5A059', // Removed duplicate
+                'sahara-gold': '#C5A059', // Renamed for clarity and to avoid conflict
+                'gold-light': '#D4AF37',
+                linen: '#E5D9C5', // Linen White
+
+                // Legacy / Compatibility
+                firmament: '#0A0A0B',
+                'gradient': { // Re-added gradient object for syntax correctness
                     'start': '#fae4cf',
                     'end': '#0a0f23',
                 },
@@ -45,6 +53,7 @@ const config: Config = {
                 // New Gray Palette
                 'french-gray': '#D0CFD3',
                 'davys-gray': '#555555',
+                'smoke-gris': '#F5F5F7',
             },
             fontFamily: {
                 sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
@@ -65,6 +74,7 @@ const config: Config = {
                 'slide-up': 'slideUp 0.6s ease-out',
                 'slide-down': 'slideDown 0.6s ease-out',
                 'door-open': 'doorOpen 2s cubic-bezier(0.65, 0, 0.35, 1)',
+                'gradient-shift': 'gradientShift 8s ease infinite',
             },
             keyframes: {
                 fadeIn: {
@@ -83,10 +93,15 @@ const config: Config = {
                     '0%': { transform: 'scaleX(1)' },
                     '100%': { transform: 'scaleX(0)' },
                 },
+                gradientShift: {
+                    '0%, 100%': { backgroundPosition: '0% 50%' },
+                    '50%': { backgroundPosition: '100% 50%' },
+                },
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-luxury': 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%)',
+                'gradient-luxury': 'linear-gradient(135deg, #0A0A0B 0%, #1A1A1A 100%)',
+                'luxury-animated': 'linear-gradient(270deg, #FFFFFF, #F5F5F7, #E5E5E5, #F5F5F7, #FFFFFF)',
             },
         },
     },

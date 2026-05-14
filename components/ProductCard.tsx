@@ -27,9 +27,9 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             className="group"
         >
             <Link href={`/products/${product.category}/${product.id}`}>
-                <div className="relative overflow-hidden bg-firmament/40 backdrop-blur-md border border-gold/10 hover:border-gold/30 transition-all duration-300 rounded-xl">
+                <div className="relative overflow-hidden bg-white/40 backdrop-blur-md border border-gold/10 hover:border-gold/30 transition-all duration-300 rounded-xl">
                     {/* Product Image */}
-                    <div className="relative aspect-[3/4] overflow-hidden bg-firmament-light/50 flex items-center justify-center">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-white/50 flex items-center justify-center">
                         {product.images[0].startsWith('http') || product.images[0].includes('.') ? (
                             <Image
                                 src={product.images[0]}
@@ -59,7 +59,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
                         {/* Overlay on Hover */}
                         <div className="absolute inset-0 bg-firmament/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span className="text-gold uppercase tracking-wider text-sm">
+                            <span className="text-white uppercase tracking-wider text-sm">
                                 {t('product.viewDetails')}
                             </span>
                         </div>
@@ -73,17 +73,17 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
                         {/* Featured Badge */}
                         {product.featured && (
-                            <div className="absolute top-4 left-4 bg-firmament/80 text-gold px-3 py-1 text-xs uppercase tracking-wider border border-gold/30">
+                            <div className="absolute top-4 left-4 bg-white/80 text-foreground px-3 py-1 text-xs uppercase tracking-wider border border-foreground/30">
                                 {t('product.featured')}
                             </div>
                         )}
                     </div>
 
                     <div className="p-6">
-                        <h3 className="text-xl font-serif text-french-gray mb-2 group-hover:text-gold transition-colors">
+                        <h3 className="text-xl font-serif text-gold mb-2 group-hover:text-gold-light transition-colors">
                             {productName}
                         </h3>
-                        <p className="text-french-gray/60 text-sm mb-4 line-clamp-2">
+                        <p className="text-foreground text-sm mb-4 line-clamp-2">
                             {productDescription}
                         </p>
 
@@ -110,7 +110,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                         {/* Available Colors */}
                         {product.colors.length > 0 && (
                             <div className="mt-4 flex items-center space-x-2">
-                                <span className="text-xs text-french-gray/50 uppercase tracking-wider">
+                                <span className="text-xs text-foreground uppercase tracking-wider">
                                     {t('product.colors')}:
                                 </span>
                                 <div className="flex space-x-1">
@@ -125,7 +125,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                                         />
                                     ))}
                                     {product.colors.length > 4 && (
-                                        <span className="text-xs text-french-gray/50">
+                                        <span className="text-xs text-foreground">
                                             +{product.colors.length - 4}
                                         </span>
                                     )}

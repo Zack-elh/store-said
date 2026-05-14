@@ -16,6 +16,8 @@ export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
         if (isDoorOpen) {
             const tl = gsap.timeline({ delay: 1.5 }); // Sync with door opening
 
+            if (!titleRef.current || !subtitleRef.current || !ctaRef.current) return;
+
             tl.to([titleRef.current, subtitleRef.current, ctaRef.current], {
                 opacity: 1,
                 y: 0,
@@ -28,22 +30,28 @@ export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
     }, [isDoorOpen]);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-transparent">
+        <section className="relative h-screen w-full overflow-hidden">
+            {/* Background handled by global body style */}
+
+            {/* Noise Overlay */}
+            <div className="bg-noise" />
+
             {/* Hero Content (visible after door opens) */}
             <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
                 <div className="text-center max-w-4xl">
                     <h1
-                        className="text-display font-serif text-royal-blue mb-6 opacity-0 translate-y-20 scale-95"
+                        ref={titleRef}
+                        className="text-display font-serif text-sahara-gold mb-6 opacity-0 translate-y-20 scale-95"
                     >
                         {t('hero.title')}
                     </h1>
                     <p
                         ref={subtitleRef}
-                        className="text-2xl md:text-3xl text-french-gray mb-4 opacity-0 translate-y-8"
+                        className="text-2xl md:text-3xl text-foreground mb-4 opacity-0 translate-y-8"
                     >
                         {t('hero.subtitle')}
                     </p>
-                    <p className="text-lg text-french-gray/80 mb-8 opacity-0 translate-y-4">
+                    <p className="text-lg text-foreground mb-8 opacity-0 translate-y-4">
                         {t('hero.experience')}
                     </p>
                     <div ref={ctaRef} className="opacity-0 translate-y-4">
@@ -51,7 +59,7 @@ export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
                             href="/products"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block px-8 py-4 bg-gold text-firmament font-semibold uppercase tracking-wider hover:bg-gold-light transition-colors"
+                            className="btn-imperial"
                         >
                             {t('hero.cta')}
                         </motion.a>

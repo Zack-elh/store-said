@@ -19,7 +19,7 @@ export default function Footer() {
                                 JaLaba
                             </span>
                         </Link>
-                        <p className="text-french-gray/70 mb-6 max-w-md leading-relaxed">
+                        <p className="text-foreground mb-6 max-w-md leading-relaxed">
                             {t('footer.tagline')}
                         </p>
                         <div className="flex space-x-4">
@@ -27,14 +27,14 @@ export default function Footer() {
                                 href={`https://wa.me/${t('contact.whatsappNumber').replace(/\s+/g, '')}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-white/50 hover:text-white transition-all"
+                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-foreground/50 hover:text-foreground transition-all"
                                 aria-label="WhatsApp"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.006.332.013c.101.007.237-.038.37.284.133.321.455 1.111.49 1.183.036.072.059.155.011.25-.048.094-.072.155-.144.238-.072.083-.153.185-.219.248-.073.07-.15.146-.065.292.085.145.378.625.811 1.011.558.497 1.03.652 1.174.724.144.072.231.061.317-.038.087-.098.37-.43.47-.577.1-.148.2-.123.336-.072s.867.409.917.458.083.072.072.195z" /></svg>
                             </a>
                             <a
                                 href={`mailto:${t('contact.emailAddress')}`}
-                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-white/50 hover:text-white transition-all"
+                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-foreground/50 hover:text-foreground transition-all"
                                 aria-label="Email"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
@@ -43,7 +43,7 @@ export default function Footer() {
                                 href="https://instagram.com/jalaba"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-white/50 hover:text-white transition-all"
+                                className="w-10 h-10 flex items-center justify-center liquid-glass rounded-lg text-foreground/50 hover:text-foreground transition-all"
                                 aria-label="Instagram"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -55,25 +55,25 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-gold font-serif text-lg mb-6">{t('footer.quicklinks')}</h4>
+                        <h4 className="text-foreground font-serif text-lg mb-6">{t('footer.quicklinks')}</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/about" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/about" className="text-foreground hover:text-foreground transition-colors">
                                     {t('nav.story')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/craftsmanship" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/craftsmanship" className="text-foreground hover:text-foreground transition-colors">
                                     {t('nav.craftsmanship')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/products" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/products" className="text-foreground hover:text-foreground transition-colors">
                                     {t('nav.collections')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/contact" className="text-foreground hover:text-foreground transition-colors">
                                     {t('nav.contact')}
                                 </Link>
                             </li>
@@ -85,22 +85,22 @@ export default function Footer() {
                         <h4 className="text-gold font-serif text-lg mb-6">{t('footer.customer')}</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/shipping" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/shipping" className="text-foreground hover:text-foreground transition-colors">
                                     {t('footer.shipping')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/returns" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/returns" className="text-foreground hover:text-foreground transition-colors">
                                     {t('footer.returns')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/size-guide" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/size-guide" className="text-foreground hover:text-foreground transition-colors">
                                     {t('footer.sizeguide')}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/faq" className="text-french-gray/70 hover:text-gold transition-colors">
+                                <Link href="/faq" className="text-foreground hover:text-foreground transition-colors">
                                     {t('footer.faq')}
                                 </Link>
                             </li>
@@ -110,14 +110,14 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-gold/20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p className="text-french-gray/60 text-sm">
+                    <p className="text-foreground text-sm">
                         © {currentYear} JaLaba. {t('footer.copyright')}
                     </p>
                     <div className="flex space-x-6 text-sm">
-                        <Link href="/privacy" className="text-french-gray/60 hover:text-gold transition-colors">
+                        <Link href="/privacy" className="text-foreground hover:text-foreground transition-colors">
                             Privacy Policy
                         </Link>
-                        <Link href="/terms" className="text-french-gray/60 hover:text-gold transition-colors">
+                        <Link href="/terms" className="text-foreground hover:text-foreground transition-colors">
                             Terms of Service
                         </Link>
                     </div>

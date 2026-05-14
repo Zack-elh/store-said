@@ -8,7 +8,7 @@ export default function FloatingContact() {
     const whatsappNumber = "+212600000000";
 
     return (
-        <div className="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
+        <div className="fixed bottom-8 right-8 z-50 flex flex-col space-y-4" suppressHydrationWarning>
             <motion.a
                 href={`https://wa.me/${whatsappNumber.replace(/\s+/g, '')}`}
                 target="_blank"

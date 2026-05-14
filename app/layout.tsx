@@ -25,6 +25,8 @@ const cormorant = Cormorant_Garamond({
     display: 'swap',
 });
 
+import ScrollBackground from '@/components/ScrollBackground';
+
 export const metadata: Metadata = {
     title: 'JaLaba | Luxury Moroccan Menswear',
     description: 'Timeless Moroccan craftsmanship reimagined for the modern gentleman. 42 years of expertise in creating handmade traditional menswear.',
@@ -70,6 +72,7 @@ export default function RootLayout({
             </head>
             <body className="antialiased" suppressHydrationWarning>
                 <Providers>
+                    <ScrollBackground />
                     <SmoothScroll>
                         {children}
                     </SmoothScroll>

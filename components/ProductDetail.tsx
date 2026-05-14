@@ -42,7 +42,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     const productDescription = product.description[language as keyof typeof product.description] || product.description.en;
 
     return (
-        <main className="min-h-screen bg-animated-gradient">
+        <main className="min-h-screen">
             <Navbar />
 
             <section className="pt-32 pb-20 px-4">
@@ -54,7 +54,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             animate={{ opacity: 1, x: 0 }}
                             className="space-y-4"
                         >
-                            <div className="relative aspect-[3/4] bg-firmament-light/50 rounded-3xl overflow-hidden border border-gold/10">
+                            <div className="relative aspect-[3/4] bg-white/50 rounded-3xl overflow-hidden border border-gold/10">
                                 <Image
                                     src={product.images[0]}
                                     alt={productName}
@@ -64,7 +64,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             </div>
                             <div className="grid grid-cols-4 gap-4">
                                 {product.images.map((img, idx) => (
-                                    <div key={idx} className="relative aspect-square bg-firmament-light/30 rounded-xl overflow-hidden border border-gold/5 cursor-pointer hover:border-gold/30 transition-all">
+                                    <div key={idx} className="relative aspect-square bg-white/30 rounded-xl overflow-hidden border border-gold/5 cursor-pointer hover:border-gold/30 transition-all">
                                         <Image src={img} alt={`${productName} view ${idx + 1}`} fill className="object-cover" />
                                     </div>
                                 ))}
@@ -75,12 +75,12 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="bg-firmament/40 backdrop-blur-md p-10 rounded-3xl border border-gold/10"
+                            className="bg-obsidian/95 backdrop-blur-md p-10 rounded-3xl border border-gold/20 shadow-2xl"
                         >
                             <span className="text-gold/60 uppercase tracking-[0.3em] text-xs mb-4 block">
                                 {product.category}
                             </span>
-                            <h1 className="text-5xl font-serif text-white mb-4">
+                            <h1 className="text-5xl font-serif text-sahara-gold mb-4">
                                 {productName}
                             </h1>
                             <div className="flex items-center space-x-6 mb-8">
@@ -97,22 +97,22 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             </div>
 
                             <div className="space-y-6 mb-12">
-                                <p className="text-french-gray/70 leading-relaxed text-lg">
+                                <p className="text-white/90 leading-relaxed text-lg font-light">
                                     {productDescription}
                                 </p>
 
                                 <div className="space-y-4">
                                     <div className="flex items-center space-x-3">
-                                        <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-french-gray/80 italic">{t('product.madeToMeasure')}</span>
+                                        <span className="text-white/90 italic">{t('product.madeToMeasure')}</span>
                                     </div>
                                     <div className="flex items-center space-x-3">
                                         <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span className="text-french-gray/80 italic">Artisanat 100% Marocain</span>
+                                        <span className="text-white/90 italic">Artisanat 100% Marocain</span>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             {/* Options */}
                             <div className="space-y-10 mb-12">
                                 <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-gold/60 mb-4">{t('product.colors')}</h4>
+                                    <h4 className="text-xs uppercase tracking-widest text-gold mb-4">{t('product.colors')}</h4>
                                     <div className="flex space-x-3">
                                         {product.colors.map((color, idx) => (
                                             <button
@@ -136,7 +136,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
 
                                 {product.sizes && product.sizes.length > 0 && (
                                     <div>
-                                        <h4 className="text-xs uppercase tracking-widest text-gold/60 mb-4">
+                                        <h4 className="text-xs uppercase tracking-widest text-gold mb-4">
                                             {product.category === 'belgha' ? t('product.size.shoes') : t('product.size')}
                                         </h4>
                                         <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                                                         setSelectedSize(size);
                                                         setSizeError(false);
                                                     }}
-                                                    className={`px-4 py-2 text-sm border rounded-lg transition-all ${selectedSize === size ? 'bg-gold text-firmament border-gold' : 'border-gold/20 text-french-gray/60 hover:border-gold/50'}`}
+                                                    className={`px-4 py-2 text-sm border rounded-lg transition-all ${selectedSize === size ? 'bg-gold text-firmament border-gold' : 'border-gold/20 text-white/80 hover:border-gold/50'}`}
                                                 >
                                                     {size}
                                                 </button>

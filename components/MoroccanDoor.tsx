@@ -30,7 +30,7 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
     }, [isOpen]);
 
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full" suppressHydrationWarning>
             {/* Left Door */}
             <div
                 ref={leftDoorRef}
@@ -38,10 +38,11 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                 style={{
                     transformOrigin: 'left center',
                 }}
+                suppressHydrationWarning
             >
                 <div className="relative w-full h-full flex items-center justify-center">
                     {/* Moroccan Pattern Overlay */}
-                    <div className="absolute inset-0 opacity-20">
+                    <div className="absolute inset-0 opacity-20" suppressHydrationWarning>
                         <svg
                             className="w-full h-full"
                             viewBox="0 0 100 100"
@@ -69,7 +70,7 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                     </div>
 
                     {/* Door Handle */}
-                    <div className="absolute right-8 top-1/2 -translate-y-1/2 w-4 h-16 bg-gold rounded-full shadow-lg" />
+                    <div className="absolute right-8 top-1/2 -translate-y-1/2 w-4 h-16 bg-gold rounded-full shadow-lg" suppressHydrationWarning />
                 </div>
             </div>
 
@@ -80,6 +81,7 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                 style={{
                     transformOrigin: 'right center',
                 }}
+                suppressHydrationWarning
             >
                 <div className="relative w-full h-full flex items-center justify-center">
                     {/* Moroccan Pattern Overlay */}
@@ -111,7 +113,7 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                     </div>
 
                     {/* Door Handle */}
-                    <div className="absolute left-8 top-1/2 -translate-y-1/2 w-4 h-16 bg-gold rounded-full shadow-lg" />
+                    <div className="absolute left-8 top-1/2 -translate-y-1/2 w-4 h-16 bg-gold rounded-full shadow-lg" suppressHydrationWarning />
                 </div>
             </div>
 
