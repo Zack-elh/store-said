@@ -1,14 +1,9 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface CategorySelectorProps {
     showTitle?: boolean;
@@ -46,20 +41,40 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
         },
     ];
 
-    useGSAP(() => {
-        if (cardsRef.current) {
-            gsap.from(cardsRef.current.children, {
-                scrollTrigger: {
-                    trigger: cardsRef.current,
-                    start: 'top 80%',
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: 'power3.out',
-            });
-        }
+    useEffect(() => {
+        let cancelled = false;
+        let ctx: { revert: () => void } | undefined;
+
+        (async () => {
+            const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+                import('gsap'),
+                import('gsap/ScrollTrigger'),
+            ]);
+            if (cancelled) return;
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            if (cardsRef.current) {
+                ctx = gsap.context(() => {
+                    gsap.from(cardsRef.current?.children ?? [], {
+                        scrollTrigger: {
+                            trigger: cardsRef.current,
+                            start: 'top 80%',
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.2,
+                        ease: 'power3.out',
+                    });
+                });
+            }
+        })();
+
+        return () => {
+            cancelled = true;
+            ctx?.revert();
+        };
     }, []);
 
     return (
@@ -83,7 +98,7 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                         <Link key={category.id} href={category.href}>
                             <motion.div
                                 whileHover={{ scale: 1.01 }}
-                                className="group relative overflow-hidden bg-firmament/60 backdrop-blur-xl border border-gold/20 hover:border-gold/50 transition-all duration-500 aspect-[16/10] rounded-none"
+                                className="group relative overflow-hidden bg-obsidian/60 backdrop-blur-xl border border-gold/20 hover:border-gold/50 transition-all duration-500 aspect-[16/10] rounded-none"
                             >
                                 {/* Decorative Inner Border */}
                                 <div className="absolute inset-2 border border-gold/5 opacity-40 pointer-events-none" />
@@ -129,7 +144,7 @@ export default function CategorySelector({ showTitle = true }: CategorySelectorP
                                 </div>
 
                                 {/* Hover Vignette */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-firmament via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700" />
                             </motion.div>
                         </Link>
                     ))}

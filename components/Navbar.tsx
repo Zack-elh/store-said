@@ -103,7 +103,7 @@ export default function Navbar() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
                         {cartCount > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-gold text-firmament text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border border-firmament">
+                            <span className="absolute -top-1 -right-1 bg-gold text-obsidian text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border border-obsidian">
                                 {cartCount}
                             </span>
                         )}
@@ -117,7 +117,7 @@ export default function Navbar() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
                         {cartCount > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-gold text-firmament text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                            <span className="absolute -top-1 -right-1 bg-gold text-obsidian text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                                 {cartCount}
                             </span>
                         )}

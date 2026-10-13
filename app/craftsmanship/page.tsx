@@ -24,7 +24,7 @@ export default function CraftsmanshipPage() {
                         <h1 className="text-display font-serif text-gradient-gold mb-6">
                             {t('craft.title')}
                         </h1>
-                        <p className="text-xl text-french-gray/80 max-w-3xl mx-auto uppercase tracking-widest">
+                        <p className="text-xl text-stone/80 max-w-3xl mx-auto uppercase tracking-widest">
                             {t('craft.subtitle')}
                         </p>
                     </motion.div>
@@ -61,10 +61,10 @@ export default function CraftsmanshipPage() {
                             className="space-y-8"
                         >
                             <h2 className="text-4xl font-serif text-gold">{t('craft.master.title')}</h2>
-                            <p className="text-french-gray/80 text-lg leading-relaxed">
+                            <p className="text-stone/80 text-lg leading-relaxed">
                                 {t('craft.master.p1')}
                             </p>
-                            <p className="text-french-gray/80 text-lg leading-relaxed">
+                            <p className="text-stone/80 text-lg leading-relaxed">
                                 {t('craft.master.p2')}
                             </p>
                             <div className="pt-8">
@@ -78,11 +78,11 @@ export default function CraftsmanshipPage() {
             </section>
 
             {/* The Materials Section */}
-            <section className="py-20 px-4 bg-firmament/40 backdrop-blur-md">
+            <section className="py-20 px-4 bg-obsidian/40 backdrop-blur-md">
                 <div className="container-luxury">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-serif text-gradient-gold mb-6">{t('craft.mat.title')}</h2>
-                        <p className="text-french-gray/60 max-w-2xl mx-auto">
+                        <p className="text-stone/60 max-w-2xl mx-auto">
                             {t('craft.mat.p1')}
                         </p>
                     </div>
@@ -99,10 +99,10 @@ export default function CraftsmanshipPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.2 }}
-                                className="p-8 border border-gold/10 bg-firmament/20 rounded-xl hover:border-gold/30 transition-colors"
+                                className="p-8 border border-gold/10 bg-obsidian/20 rounded-xl hover:border-gold/30 transition-colors"
                             >
                                 <h3 className="text-2xl font-serif text-gold mb-4">{item.title}</h3>
-                                <p className="text-french-gray/70 leading-relaxed">{item.desc}</p>
+                                <p className="text-stone/70 leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -120,10 +120,10 @@ export default function CraftsmanshipPage() {
                             className="space-y-8 md:order-1"
                         >
                             <h2 className="text-4xl font-serif text-gold">{t('craft.det.title')}</h2>
-                            <p className="text-french-gray/80 text-lg leading-relaxed">
+                            <p className="text-stone/80 text-lg leading-relaxed">
                                 {t('craft.det.p1')}
                             </p>
-                            <p className="text-french-gray/80 text-lg leading-relaxed">
+                            <p className="text-stone/80 text-lg leading-relaxed">
                                 {t('craft.det.p2')}
                             </p>
                         </motion.div>
@@ -152,16 +152,16 @@ export default function CraftsmanshipPage() {
             {/* CTA Section */}
             <section className="py-32 px-4 text-center">
                 <div className="container-luxury">
-                    <div className="max-w-4xl mx-auto p-12 border border-gold/20 bg-firmament/30 rounded-3xl backdrop-blur-lg">
+                    <div className="max-w-4xl mx-auto p-12 border border-gold/20 bg-obsidian/30 rounded-3xl backdrop-blur-lg">
                         <h2 className="text-4xl font-serif text-white mb-8">{t('craft.cta.title')}</h2>
-                        <p className="text-french-gray/70 mb-12 text-lg">
+                        <p className="text-stone/70 mb-12 text-lg">
                             {t('craft.cta.p1')}
                         </p>
                         <motion.a
                             href="/products"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block px-12 py-5 bg-gold text-firmament font-bold uppercase tracking-widest hover:bg-gold-light transition-all rounded-full shadow-2xl shadow-gold/20"
+                            className="inline-block px-12 py-5 bg-gold text-obsidian font-bold uppercase tracking-widest hover:bg-gold-light transition-all rounded-full shadow-2xl shadow-gold/20"
                         >
                             {t('craft.cta.btn')}
                         </motion.a>

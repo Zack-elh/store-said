@@ -12,7 +12,7 @@ export default function GandoraPage() {
     const products = getProductsByCategory(Category.GANDORA);
 
     return (
-        <main className="min-h-screen bg-luxury-black">
+        <main className="min-h-screen bg-obsidian">
             <Navbar />
 
             {/* Hero Section */}
@@ -21,10 +21,10 @@ export default function GandoraPage() {
                     <h1 className="text-display font-serif text-gradient-gold mb-6">
                         {t('products.gandora.title')}
                     </h1>
-                    <p className="text-lg text-french-gray/80 max-w-3xl mx-auto mb-4">
+                    <p className="text-lg text-stone/80 max-w-3xl mx-auto mb-4">
                         {t('category.gandora.desc')}
                     </p>
-                    <p className="text-sm text-french-gray/60 uppercase tracking-widest">
+                    <p className="text-sm text-stone/60 uppercase tracking-widest">
                         {products.length} {t('products.count')}
                     </p>
                 </div>

@@ -2,6 +2,10 @@
 const nextConfig = {
     reactStrictMode: true,
     output: 'export',
+    trailingSlash: true,
+    experimental: {
+        optimizePackageImports: ['framer-motion', 'gsap'],
+    },
     images: {
         unoptimized: true,
         formats: ['image/avif', 'image/webp'],

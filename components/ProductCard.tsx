@@ -58,7 +58,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                         </div>
 
                         {/* Overlay on Hover */}
-                        <div className="absolute inset-0 bg-firmament/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-obsidian/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span className="text-white uppercase tracking-wider text-sm">
                                 {t('product.viewDetails')}
                             </span>
@@ -66,7 +66,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
                         {/* Made to Measure Badge */}
                         {product.madeToMeasure && (
-                            <div className="absolute top-4 right-4 bg-gold/90 text-firmament px-3 py-1 text-xs uppercase tracking-wider">
+                            <div className="absolute top-4 right-4 bg-gold/90 text-obsidian px-3 py-1 text-xs uppercase tracking-wider">
                                 {t('product.madeToMeasure')}
                             </div>
                         )}
@@ -98,7 +98,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                                     e.stopPropagation();
                                     addToCart(product);
                                 }}
-                                className="p-3 bg-gold/10 hover:bg-gold text-gold hover:text-firmament transition-all duration-300 rounded-full border border-gold/20"
+                                className="p-3 bg-gold/10 hover:bg-gold text-gold hover:text-obsidian transition-all duration-300 rounded-full border border-gold/20"
                                 aria-label={t('product.addToCart')}
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

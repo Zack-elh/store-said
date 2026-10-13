@@ -23,10 +23,10 @@ export default function ContactPage() {
                         <h1 className="text-display font-serif text-gradient-gold mb-6">
                             {t('contact.title')}
                         </h1>
-                        <p className="text-lg text-french-gray/80 max-w-3xl mx-auto mb-4">
+                        <p className="text-lg text-stone/80 max-w-3xl mx-auto mb-4">
                             {t('contact.subtitle')}
                         </p>
-                        <p className="text-french-gray/60 max-w-2xl mx-auto">
+                        <p className="text-stone/60 max-w-2xl mx-auto">
                             {t('contact.desc')}
                         </p>
                     </motion.div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-serif text-gold mb-2">Instagram</h3>
-                            <p className="text-french-gray/70 text-sm">{t('contact.insta')}</p>
+                            <p className="text-stone/70 text-sm">{t('contact.insta')}</p>
                         </motion.a>
 
                         {/* Facebook */}
@@ -75,7 +75,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-serif text-gold mb-2">Facebook</h3>
-                            <p className="text-french-gray/70 text-sm">{t('contact.fb')}</p>
+                            <p className="text-stone/70 text-sm">{t('contact.fb')}</p>
                         </motion.a>
 
                         {/* WhatsApp */}
@@ -95,7 +95,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-serif text-gold mb-2">WhatsApp</h3>
-                            <p className="text-french-gray/70 text-sm">{t('contact.wa')}</p>
+                            <p className="text-stone/70 text-sm">{t('contact.wa')}</p>
                         </motion.a>
                     </div>
 
@@ -119,7 +119,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-lg font-serif text-white mb-3">{t('contact.email')}</h3>
-                            <a href={`mailto:${t('contact.emailAddress')}`} className="text-french-gray/80 hover:text-white transition-colors block break-all">
+                            <a href={`mailto:${t('contact.emailAddress')}`} className="text-stone/80 hover:text-white transition-colors block break-all">
                                 {t('contact.emailAddress')}
                             </a>
                         </motion.div>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                                 <svg className="w-6 h-6 text-white/70" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.006.332.013c.101.007.237-.038.37.284.133.321.455 1.111.49 1.183.036.072.059.155.011.25-.048.094-.072.155-.144.238-.072.083-.153.185-.219.248-.073.07-.15.146-.065.292.085.145.378.625.811 1.011.558.497 1.03.652 1.174.724.144.072.231.061.317-.038.087-.098.37-.43.47-.577.1-.148.2-.123.336-.072s.867.409.917.458.083.072.072.195z" /></svg>
                             </div>
                             <h3 className="text-lg font-serif text-white mb-3">WhatsApp</h3>
-                            <a href={`https://wa.me/${t('contact.whatsappNumber').replace(/\s+/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-french-gray/80 hover:text-white transition-colors block">
+                            <a href={`https://wa.me/${t('contact.whatsappNumber').replace(/\s+/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-stone/80 hover:text-white transition-colors block">
                                 {t('contact.whatsappNumber')}
                             </a>
                         </motion.div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-lg font-serif text-gold mb-3">{t('contact.address')}</h3>
-                            <p className="text-french-gray/80">{t('contact.addressText')}</p>
+                            <p className="text-stone/80">{t('contact.addressText')}</p>
                         </motion.div>
 
                         {/* Hours */}
@@ -170,7 +170,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <h3 className="text-lg font-serif text-gold mb-3">{t('contact.hours')}</h3>
-                            <p className="text-french-gray/80">{t('contact.hoursText')}</p>
+                            <p className="text-stone/80">{t('contact.hoursText')}</p>
                         </motion.div>
                     </div>
                 </div>

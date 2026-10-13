@@ -23,7 +23,7 @@ export default function ProductsPage() {
                         <h1 className="text-display font-serif text-gradient-gold mb-6">
                             {t('category.title')}
                         </h1>
-                        <p className="text-xl text-french-gray/80 max-w-3xl mx-auto uppercase tracking-[0.3em] font-light">
+                        <p className="text-xl text-stone/80 max-w-3xl mx-auto uppercase tracking-[0.3em] font-light">
                             {t('category.subtitle')}
                         </p>
                     </motion.div>

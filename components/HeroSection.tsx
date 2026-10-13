@@ -1,32 +1,45 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
+    const taglineRef = useRef<HTMLParagraphElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLParagraphElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
     const { t } = useLanguage();
 
-    useGSAP(() => {
-        if (isDoorOpen) {
-            const tl = gsap.timeline({ delay: 1.5 }); // Sync with door opening
+    useEffect(() => {
+        if (!isDoorOpen) return;
 
-            if (!titleRef.current || !subtitleRef.current || !ctaRef.current) return;
+        let cancelled = false;
+        let ctx: { revert: () => void } | undefined;
 
-            tl.to([titleRef.current, subtitleRef.current, ctaRef.current], {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 1.2,
-                stagger: 0.3,
-                ease: 'expo.out',
+        (async () => {
+            const { gsap } = await import('gsap');
+            if (cancelled) return;
+            if (!taglineRef.current || !titleRef.current || !subtitleRef.current || !ctaRef.current) return;
+
+            ctx = gsap.context(() => {
+                const tl = gsap.timeline({ delay: 1.5 }); // Sync with door opening
+
+                tl.to([taglineRef.current, titleRef.current, subtitleRef.current, ctaRef.current], {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1.2,
+                    stagger: 0.3,
+                    ease: 'expo.out',
+                });
             });
-        }
+        })();
+
+        return () => {
+            cancelled = true;
+            ctx?.revert();
+        };
     }, [isDoorOpen]);
 
     return (
@@ -39,6 +52,12 @@ export default function HeroSection({ isDoorOpen }: { isDoorOpen: boolean }) {
             {/* Hero Content (visible after door opens) */}
             <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
                 <div className="text-center max-w-4xl">
+                    <p
+                        ref={taglineRef}
+                        className="text-sm md:text-base uppercase tracking-[0.4em] text-gold mb-6 opacity-0 translate-y-8"
+                    >
+                        {t('hero.tagline')}
+                    </p>
                     <h1
                         ref={titleRef}
                         className="text-display font-serif text-sahara-gold mb-6 opacity-0 translate-y-20 scale-95"

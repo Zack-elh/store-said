@@ -9,37 +9,21 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                // New primary colors
+                // Theme tokens
                 background: 'var(--background)',
                 foreground: 'var(--foreground)',
 
                 // Imperial Theme
                 obsidian: '#0A0A0B',
-                // gold: '#C5A059', // Removed duplicate
-                'sahara-gold': '#C5A059', // Renamed for clarity and to avoid conflict
-                'gold-light': '#D4AF37',
-                linen: '#E5D9C5', // Linen White
-
-                // Legacy / Compatibility
-                firmament: '#0A0A0B',
-                'gradient': { // Re-added gradient object for syntax correctness
-                    'start': '#fae4cf',
-                    'end': '#0a0f23',
-                },
-
-                // Dark luxury backgrounds (keeping for transition or secondary use)
-                'luxury-black': '#0A0A0A',
-                'black-smoke': '#1A1A1A',
-                'royal-blue': '#4169E1',
-                'luxury-dark': '#1A1A1A',
-                'luxury-charcoal': '#2A2A2A',
-
-                // Gold accents
-                'gold': {
+                gold: {
                     DEFAULT: '#D4AF37',
                     light: '#E5C158',
                     dark: '#C9A961',
                 },
+                'sahara-gold': '#C5A059',
+                linen: '#E5D9C5',
+                smoke: '#1A1A1A',
+                stone: '#D0CFD3',
 
                 // Moroccan earth tones
                 'moroccan': {
@@ -49,11 +33,6 @@ const config: Config = {
                     olive: '#8B7355',
                     cream: '#F8F4E8',
                 },
-
-                // New Gray Palette
-                'french-gray': '#D0CFD3',
-                'davys-gray': '#555555',
-                'smoke-gris': '#F5F5F7',
             },
             fontFamily: {
                 sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

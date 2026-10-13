@@ -1,15 +1,15 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
 export default function ScrollBackground() {
     const { scrollYProgress } = useScroll();
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
+    const isClient = useSyncExternalStore(
+        () => () => {},
+        () => true,
+        () => false
+    );
 
     // 3D Parallax Layers
     const y1 = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
@@ -20,6 +20,9 @@ export default function ScrollBackground() {
     // Color Shifts
     const opacity1 = useTransform(scrollYProgress, [0, 0.5, 1], [0.4, 0.8, 0.4]);
     const opacity2 = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 0.3, 0.6]);
+
+    // Overlay Scale
+    const scale2 = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
 
     if (!isClient) return null;
 
@@ -40,7 +43,7 @@ export default function ScrollBackground() {
             />
 
             <motion.div
-                style={{ scale: useTransform(scrollYProgress, [0, 1], [1, 1.5]) }}
+                style={{ scale: scale2 }}
                 className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] rounded-full bg-gradient-radial from-white/80 to-transparent blur-[80px] mix-blend-overlay"
             />
 

@@ -1,8 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { useEffect, useRef } from 'react';
 
 interface MoroccanDoorProps {
     isOpen: boolean;
@@ -12,21 +10,36 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
     const leftDoorRef = useRef<HTMLDivElement>(null);
     const rightDoorRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        if (isOpen) {
-            // Animate doors
-            gsap.to(leftDoorRef.current, {
-                x: '-100%',
-                duration: 2,
-                ease: 'power3.inOut',
-            });
+    useEffect(() => {
+        if (!isOpen) return;
 
-            gsap.to(rightDoorRef.current, {
-                x: '100%',
-                duration: 2,
-                ease: 'power3.inOut',
+        let cancelled = false;
+        let ctx: { revert: () => void } | undefined;
+
+        (async () => {
+            const { gsap } = await import('gsap');
+            if (cancelled) return;
+
+            ctx = gsap.context(() => {
+                // Animate doors
+                gsap.to(leftDoorRef.current, {
+                    x: '-100%',
+                    duration: 2,
+                    ease: 'power3.inOut',
+                });
+
+                gsap.to(rightDoorRef.current, {
+                    x: '100%',
+                    duration: 2,
+                    ease: 'power3.inOut',
+                });
             });
-        }
+        })();
+
+        return () => {
+            cancelled = true;
+            ctx?.revert();
+        };
     }, [isOpen]);
 
     return (
@@ -61,9 +74,9 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="0.5"
-                                    className="text-black-smoke"
+                                    className="text-smoke"
                                 />
-                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-black-smoke" />
+                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-smoke" />
                             </pattern>
                             <rect width="100" height="100" fill="url(#moroccan-pattern-left)" />
                         </svg>
@@ -104,9 +117,9 @@ export default function MoroccanDoor({ isOpen }: MoroccanDoorProps) {
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="0.5"
-                                    className="text-black-smoke"
+                                    className="text-smoke"
                                 />
-                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-black-smoke" />
+                                <circle cx="10" cy="10" r="2" fill="currentColor" className="text-smoke" />
                             </pattern>
                             <rect width="100" height="100" fill="url(#moroccan-pattern-right)" />
                         </svg>

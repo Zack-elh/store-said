@@ -29,12 +29,12 @@ Ensure you have Node.js (version 18 or higher) and npm installed on your system.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Zack-elh/jabador.git
+   git clone https://github.com/Zack-elh/store-said.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd jabador
+   cd store-said
    ```
 
 3. Install dependencies:

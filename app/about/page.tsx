@@ -23,7 +23,7 @@ export default function AboutPage() {
                         <h1 className="text-display font-serif text-gradient-gold mb-6">
                             {t('about.subtitle')}
                         </h1>
-                        <p className="text-xl text-french-gray/80 max-w-3xl mx-auto">
+                        <p className="text-xl text-stone/80 max-w-3xl mx-auto">
                             {t('about.hero.subtitle')}
                         </p>
                     </motion.div>
@@ -31,36 +31,36 @@ export default function AboutPage() {
             </section>
 
             {/* Heritage Section */}
-            <section className="py-20 px-4 bg-firmament/40 backdrop-blur-md border-y border-gold/10">
+            <section className="py-20 px-4 bg-obsidian/40 backdrop-blur-md border-y border-gold/10">
                 <div className="container-luxury max-w-4xl">
                     <div className="prose prose-invert prose-lg mx-auto">
                         <h2 className="text-4xl font-serif text-gold mb-8">{t('about.title1')}</h2>
 
-                        <p className="text-french-gray/80 leading-relaxed mb-6">
+                        <p className="text-stone/80 leading-relaxed mb-6">
                             {t('about.p1')}
                         </p>
 
-                        <p className="text-french-gray/80 leading-relaxed mb-6">
+                        <p className="text-stone/80 leading-relaxed mb-6">
                             {t('about.p2')}
                         </p>
 
                         <h3 className="text-3xl font-serif text-gold mt-12 mb-6">{t('about.title2')}</h3>
 
-                        <p className="text-french-gray/80 leading-relaxed mb-6">
+                        <p className="text-stone/80 leading-relaxed mb-6">
                             {t('about.p3')}
                         </p>
 
-                        <p className="text-french-gray/80 leading-relaxed mb-6">
+                        <p className="text-stone/80 leading-relaxed mb-6">
                             {t('about.p4')}
                         </p>
 
                         <h3 className="text-3xl font-serif text-gold mt-12 mb-6">{t('about.title3')}</h3>
 
-                        <p className="text-french-gray/80 leading-relaxed mb-6">
+                        <p className="text-stone/80 leading-relaxed mb-6">
                             {t('about.p5')}
                         </p>
 
-                        <p className="text-french-gray/80 leading-relaxed">
+                        <p className="text-stone/80 leading-relaxed">
                             {t('about.p6')}
                         </p>
                     </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                                 </svg>
                             </div>
                             <h3 className="text-2xl font-serif text-gold mb-4">{t('about.values.auth.title')}</h3>
-                            <p className="text-french-gray/70">
+                            <p className="text-stone/70">
                                 {t('about.values.auth.desc')}
                             </p>
                         </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                                 </svg>
                             </div>
                             <h3 className="text-2xl font-serif text-gold mb-4">{t('about.values.qual.title')}</h3>
-                            <p className="text-french-gray/70">
+                            <p className="text-stone/70">
                                 {t('about.values.qual.desc')}
                             </p>
                         </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
                                 </svg>
                             </div>
                             <h3 className="text-2xl font-serif text-gold mb-4">{t('about.values.glob.title')}</h3>
-                            <p className="text-french-gray/70">
+                            <p className="text-stone/70">
                                 {t('about.values.glob.desc')}
                             </p>
                         </div>

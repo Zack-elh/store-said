@@ -28,7 +28,7 @@ export default function CartPage() {
                         <h1 className="text-display font-serif text-gradient-gold mb-4 text-center">
                             {t('cart.title')}
                         </h1>
-                        <p className="text-french-gray/60 text-center uppercase tracking-widest text-sm">
+                        <p className="text-stone/60 text-center uppercase tracking-widest text-sm">
                             {cartCount} {t('products.count')}
                         </p>
                     </motion.div>
@@ -42,10 +42,10 @@ export default function CartPage() {
                             <svg className="w-20 h-20 text-gold/20 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
-                            <p className="text-xl text-french-gray/40 mb-8">{t('cart.empty')}</p>
+                            <p className="text-xl text-stone/40 mb-8">{t('cart.empty')}</p>
                             <Link
                                 href="/products"
-                                className="inline-block px-8 py-4 bg-gold text-firmament font-bold uppercase tracking-wider rounded-full hover:bg-gold-light transition-all"
+                                className="inline-block px-8 py-4 bg-gold text-obsidian font-bold uppercase tracking-wider rounded-full hover:bg-gold-light transition-all"
                             >
                                 {t('product.discover')}
                             </Link>
@@ -67,7 +67,7 @@ export default function CartPage() {
                                                 exit={{ opacity: 0, scale: 0.95 }}
                                                 className="glass p-6 rounded-2xl flex items-center space-x-6"
                                             >
-                                                <div className="relative w-24 h-32 flex-shrink-0 bg-firmament-light/50 rounded-lg overflow-hidden border border-gold/10">
+                                                <div className="relative w-24 h-32 flex-shrink-0 bg-obsidian/50 rounded-lg overflow-hidden border border-gold/10">
                                                     <Image
                                                         src={item.images[0]}
                                                         alt={itemName}
@@ -76,7 +76,7 @@ export default function CartPage() {
                                                     />
                                                 </div>
                                                 <div className="flex-grow">
-                                                    <h3 className="text-xl font-serif text-french-gray mb-1">{itemName}</h3>
+                                                    <h3 className="text-xl font-serif text-stone mb-1">{itemName}</h3>
                                                     <div className="flex items-center space-x-3 mb-4">
                                                         <p className="text-gold font-serif">{itemPrice.symbol}{itemPrice.amount}</p>
                                                         {item.selectedSize && (
@@ -94,7 +94,7 @@ export default function CartPage() {
                                                             >
                                                                 -
                                                             </button>
-                                                            <span className="px-3 py-1 text-french-gray min-w-[3ch] text-center">
+                                                            <span className="px-3 py-1 text-stone min-w-[3ch] text-center">
                                                                 {item.quantity}
                                                             </span>
                                                             <button
@@ -106,7 +106,7 @@ export default function CartPage() {
                                                         </div>
                                                         <button
                                                             onClick={() => removeFromCart(item.id, item.selectedSize)}
-                                                            className="text-french-gray/40 hover:text-red-400 text-xs uppercase tracking-widest transition-colors"
+                                                            className="text-stone/40 hover:text-red-400 text-xs uppercase tracking-widest transition-colors"
                                                         >
                                                             {t('cart.remove')}
                                                         </button>
@@ -129,11 +129,11 @@ export default function CartPage() {
                                     <h2 className="text-2xl font-serif text-gold mb-8">{t('checkout.orderSummary')}</h2>
 
                                     <div className="space-y-4 mb-8">
-                                        <div className="flex justify-between text-french-gray/60">
+                                        <div className="flex justify-between text-stone/60">
                                             <span>{t('cart.subtotal')}</span>
                                             <span>{total.symbol}{total.amount}</span>
                                         </div>
-                                        <div className="flex justify-between text-french-gray/60">
+                                        <div className="flex justify-between text-stone/60">
                                             <span>Livraison</span>
                                             <span className="text-gold uppercase tracking-widest text-xs">Gratuit</span>
                                         </div>
@@ -145,7 +145,7 @@ export default function CartPage() {
 
                                     <Link
                                         href="/checkout"
-                                        className="block w-full py-5 bg-gold text-firmament font-bold uppercase tracking-[0.2em] text-center rounded-xl hover:bg-gold-light transition-all shadow-xl shadow-gold/10"
+                                        className="block w-full py-5 bg-gold text-obsidian font-bold uppercase tracking-[0.2em] text-center rounded-xl hover:bg-gold-light transition-all shadow-xl shadow-gold/10"
                                     >
                                         {t('cart.checkout')}
                                     </Link>
@@ -157,7 +157,7 @@ export default function CartPage() {
                                         {t('product.discover')}
                                     </Link>
 
-                                    <p className="text-[10px] text-french-gray/30 text-center mt-6 uppercase tracking-widest leading-relaxed">
+                                    <p className="text-[10px] text-stone/30 text-center mt-6 uppercase tracking-widest leading-relaxed">
                                         Paiement sécurisé & Artisanat authentique garanti
                                     </p>
                                 </div>

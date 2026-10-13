@@ -147,7 +147,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                                                         setSelectedSize(size);
                                                         setSizeError(false);
                                                     }}
-                                                    className={`px-4 py-2 text-sm border rounded-lg transition-all ${selectedSize === size ? 'bg-gold text-firmament border-gold' : 'border-gold/20 text-white/80 hover:border-gold/50'}`}
+                                                    className={`px-4 py-2 text-sm border rounded-lg transition-all ${selectedSize === size ? 'bg-gold text-obsidian border-gold' : 'border-gold/20 text-white/80 hover:border-gold/50'}`}
                                                 >
                                                     {size}
                                                 </button>
@@ -166,7 +166,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button
                                     onClick={handleAddToCart}
-                                    className="flex-grow py-5 bg-gold text-firmament font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-gold-light transition-all shadow-xl shadow-gold/20"
+                                    className="flex-grow py-5 bg-gold text-obsidian font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-gold-light transition-all shadow-xl shadow-gold/20"
                                 >
                                     {t('product.addToCart')}
                                 </button>
